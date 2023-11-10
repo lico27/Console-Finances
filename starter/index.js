@@ -86,3 +86,14 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+// var monthCount = ;
+// var greatestProfit = ['date, 0]
+// var greatestLoss = ['date' 0]
+// var netChangeProfits
+// var difference = finances[i][1] to finances[i -1][1]
+// var netChangeProfits = netChangeProfits + difference
+// loop through Finances array starting at index 1 not 0
+// if current profit > value of greatestProfit, ressign greatestProfit to ['current date', current profit]
+// if current profit < value of greatestLoss, ressign greatestLoss to ['current date', current profit]
+// var averageChangeProfits / finances.length - 1
