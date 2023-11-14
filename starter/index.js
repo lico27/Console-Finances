@@ -87,8 +87,10 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-// var monthCount = ;
-// var greatestProfit = ['date, 0]
+var monthCount = finances.length;
+
+
+// var greatestProfit = ['date', 0]
 // var greatestLoss = ['date' 0]
 // var netChangeProfits
 // var difference = finances[i][1] to finances[i -1][1]
@@ -97,3 +99,16 @@ var finances = [
 // if current profit > value of greatestProfit, ressign greatestProfit to ['current date', current profit]
 // if current profit < value of greatestLoss, ressign greatestLoss to ['current date', current profit]
 // var averageChangeProfits / finances.length - 1
+
+
+console.log(
+
+`Financial Analysis
+----------------
+Total Months: ${monthCount}
+Total: $38382578
+Average Change: -2315.12
+Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
+Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)`
+
+)

@@ -1,4 +1,3 @@
 - initialise variables for monthCount, netchangeProfits, averageChangeProfits, greatestProfit, greatestLoss
 - loop for each month add 1 to monthCount variable
 - loop through array, compare finances[i][1] to finances[i -1][1]
-- 
