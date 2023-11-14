@@ -88,10 +88,16 @@ var finances = [
 ];
 
 var monthCount = finances.length;
+var totalProfitLoss = 0;
 var netChangeProfits = 0;
 var averageChangeProfits = 0;
 var greatestProfit = 0;
 var greatestLoss = 0;
+
+for (var i = 0; i < finances.length; i++) {
+  totalProfitLoss += finances[i][1];
+}
+
 
 // var greatestProfit = ['date', 0]
 // var greatestLoss = ['date' 0]
@@ -109,9 +115,6 @@ console.log(
 `Financial Analysis
 ----------------
 Total Months: ${monthCount}
-Total: $38382578
-Average Change: -2315.12
-Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
-Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)`
-
+Total: $${totalProfitLoss}
+`
 )
