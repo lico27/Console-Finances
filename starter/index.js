@@ -88,7 +88,10 @@ var finances = [
 ];
 
 var monthCount = finances.length;
-
+var netChangeProfits = 0;
+var averageChangeProfits = 0;
+var greatestProfit = 0;
+var greatestLoss = 0;
 
 // var greatestProfit = ['date', 0]
 // var greatestLoss = ['date' 0]
