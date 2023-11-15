@@ -89,8 +89,8 @@ var finances = [
 
 var monthCount = finances.length;
 var totalProfitLoss = 0;
-var netChangeProfits = 0;
-var averageChangeProfits = 0;
+var netChangeProfits = [];
+var totalChangeProfits = 0;
 var greatestProfit = 0;
 var greatestLoss = 0;
 
@@ -98,17 +98,17 @@ for (var i = 0; i < finances.length; i++) {
   totalProfitLoss += finances[i][1];
 }
 
+for (var i = 1; i < finances.length; i++) {
+  netChangeProfits.push(finances[i][1] - finances[i - 1][1]); 
+  var variance = finances[i][1] - finances[i -1][1];
+  totalProfitLoss = totalProfitLoss + variance;
+}
 
-// var greatestProfit = ['date', 0]
-// var greatestLoss = ['date' 0]
-// var netChangeProfits
-// var difference = finances[i][1] to finances[i -1][1]
-// var netChangeProfits = netChangeProfits + difference
-// loop through Finances array starting at index 1 not 0
-// if current profit > value of greatestProfit, ressign greatestProfit to ['current date', current profit]
-// if current profit < value of greatestLoss, ressign greatestLoss to ['current date', current profit]
-// var averageChangeProfits / finances.length - 1
+for (var i = 0; i < netChangeProfits.length; i++) {
+  totalChangeProfits += netChangeProfits[i];
+}
 
+var averageChangeProfits = totalChangeProfits/(monthCount-1);
 
 console.log(
 
@@ -118,3 +118,5 @@ Total Months: ${monthCount}
 Total: $${totalProfitLoss}
 `
 )
+console.log('Average Change: $' + averageChangeProfits.toFixed(2))
+
