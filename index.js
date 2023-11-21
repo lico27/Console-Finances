@@ -150,6 +150,6 @@ Total Months: ${monthCount}
 Total: $${total}
 Average Change: $${averageChangeProfits.toFixed(2)}
 Greatest Increase in Profits/Losses: ${greatestProfit[0]}, ($${greatestProfit[1]})
-Greatest Decrease in Profits/Losses: ${greatestLoss[0]}, ($${greatestLoss[1]})
+Greatest Decrease in Profits/Losses: ${greatestLoss[0]}, ($-${greatestLoss[1]})
 `
 );
