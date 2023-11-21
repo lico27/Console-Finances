@@ -87,6 +87,8 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+// Initialise variables
+
 var monthCount = finances.length;
 var totalProfitLoss = 0;
 var netChangeProfits = [];
@@ -94,9 +96,13 @@ var totalChangeProfits = 0;
 var greatestProfit = 0;
 var greatestLoss = 0;
 
+// Find total profits/losses
+
 for (var i = 0; i < finances.length; i++) {
   totalProfitLoss += finances[i][1];
 }
+
+// Find variance from month to month
 
 for (var i = 1; i < finances.length; i++) {
   netChangeProfits.push(finances[i][1] - finances[i - 1][1]); 
@@ -108,15 +114,25 @@ for (var i = 0; i < netChangeProfits.length; i++) {
   totalChangeProfits += netChangeProfits[i];
 }
 
-var averageChangeProfits = totalChangeProfits/(monthCount-1);
+// Find average change from month to month
+
+var averageChangeProfits = totalChangeProfits / (monthCount - 1);
+
+
+
+
 
 console.log(
-
 `Financial Analysis
 ----------------
 Total Months: ${monthCount}
 Total: $${totalProfitLoss}
 `
-)
-console.log('Average Change: $' + averageChangeProfits.toFixed(2))
+);
+console.log('Average Change: $' + averageChangeProfits.toFixed(2));
+console.log(
+`Greatest Increase in Profits/Losses: 
+Greatest Decrease in Profits/Losses:
+  `
+);
 
