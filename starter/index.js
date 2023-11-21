@@ -93,8 +93,9 @@ var monthCount = finances.length;
 var totalProfitLoss = 0;
 var netChangeProfits = [];
 var totalChangeProfits = 0;
-var greatestProfit = 0;
-var greatestLoss = 0;
+var greatestProfit = ["", 0];
+var greatestLoss = ["", 0];
+var posVariance = 0;
 
 // Find total profits/losses
 
@@ -118,21 +119,24 @@ for (var i = 0; i < netChangeProfits.length; i++) {
 
 var averageChangeProfits = totalChangeProfits / (monthCount - 1);
 
+// Find greatest profit
 
-
-
+for (var i = 1; i < finances.length; i++) {
+  var posMonth = finances[i][0];
+  var posVariance = finances[i][1] - finances[i -1][1];
+  if (posVariance >= greatestProfit[1]) {
+    greatestProfit = [posMonth, posVariance];
+  }
+}
 
 console.log(
 `Financial Analysis
 ----------------
 Total Months: ${monthCount}
 Total: $${totalProfitLoss}
-`
-);
-console.log('Average Change: $' + averageChangeProfits.toFixed(2));
-console.log(
-`Greatest Increase in Profits/Losses: 
+Average Change: $${averageChangeProfits.toFixed(2)}
+Greatest Increase in Profits/Losses: ${greatestProfit[0]}, ($${greatestProfit[1]})
 Greatest Decrease in Profits/Losses:
-  `
+`
 );
 
