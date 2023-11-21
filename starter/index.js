@@ -90,6 +90,7 @@ var finances = [
 // Initialise variables
 
 var monthCount = finances.length;
+let total = 0;
 var totalProfitLoss = 0;
 var netChangeProfits = [];
 var totalChangeProfits = 0;
@@ -100,8 +101,8 @@ var negVariance = 0;
 
 // Find total profits/losses
 
-for (var i = 0; i < finances.length; i++) {
-  totalProfitLoss += finances[i][1];
+for (let i = 0; i < finances.length; i++){
+  total += finances[i][1];  
 }
 
 // Find variance from month to month
@@ -146,7 +147,7 @@ console.log(
 `Financial Analysis
 ----------------
 Total Months: ${monthCount}
-Total: $${totalProfitLoss}
+Total: $${total}
 Average Change: $${averageChangeProfits.toFixed(2)}
 Greatest Increase in Profits/Losses: ${greatestProfit[0]}, ($${greatestProfit[1]})
 Greatest Decrease in Profits/Losses: ${greatestLoss[0]}, ($${greatestLoss[1]})
