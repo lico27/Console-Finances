@@ -96,6 +96,7 @@ var totalChangeProfits = 0;
 var greatestProfit = ["", 0];
 var greatestLoss = ["", 0];
 var posVariance = 0;
+var negVariance = 0;
 
 // Find total profits/losses
 
@@ -129,6 +130,18 @@ for (var i = 1; i < finances.length; i++) {
   }
 }
 
+// Find greatest loss
+
+for (var i = 1; i < finances.length; i++) {
+  var negMonth = finances[i][0];
+  var negVariance = finances[i -1][1] - finances[i][1];
+  if (negVariance >= greatestLoss[1]) {
+    greatestLoss = [negMonth, negVariance];
+  }
+}
+
+// Log results to console
+
 console.log(
 `Financial Analysis
 ----------------
@@ -136,7 +149,6 @@ Total Months: ${monthCount}
 Total: $${totalProfitLoss}
 Average Change: $${averageChangeProfits.toFixed(2)}
 Greatest Increase in Profits/Losses: ${greatestProfit[0]}, ($${greatestProfit[1]})
-Greatest Decrease in Profits/Losses:
+Greatest Decrease in Profits/Losses: ${greatestLoss[0]}, ($${greatestLoss[1]})
 `
 );
-
